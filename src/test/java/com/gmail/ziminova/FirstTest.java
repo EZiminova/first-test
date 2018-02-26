@@ -38,7 +38,7 @@ public class FirstTest extends BaseTest{
         String textMore1 = searchPage.saveContentsItem();
 
         searchPage.changeOfLocation();
-        locationPage.choiceLocation("Париж");
+        locationPage.choiceLocation("Милан");
         String textMore2 = searchPage.saveContentsItem();
 
         Assert.assertEquals(textMore1, textMore2);
