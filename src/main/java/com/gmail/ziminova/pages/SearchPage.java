@@ -12,6 +12,9 @@ public class SearchPage extends BasePage{
     private By positionClick = By.cssSelector(".geolink__reg");
     private By itemButton = By.cssSelector(".home-link.home-link_blue_yes.home-tabs__link.home-tabs__more-switcher");
     private By itemResult = By.cssSelector(".home-tabs__more");
+    private By loginField = By.cssSelector("[placeholder=Логин]");
+    private By passwordField = By.cssSelector("[placeholder=Пароль]");
+    private By enterMailButon = By.cssSelector(".auth__button");
 
     public SearchPage(WebDriver driver){
         super(driver);
@@ -22,6 +25,15 @@ public class SearchPage extends BasePage{
         sendKeysByElement(entrySearchField, text);
         clickByElement(searchButton);
     }
+
+    public void enterMail(String login, String password){
+        //clickByElement(loginField);
+        sendKeysByElement(loginField, login);
+        //clickByElement(passwordField);
+        sendKeysByElement(passwordField, password);
+        clickByElement(enterMailButon);
+    }
+
 
     public void changeOfLocation(){
         clickByElement(positionClick);

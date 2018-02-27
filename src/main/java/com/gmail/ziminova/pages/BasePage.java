@@ -31,7 +31,10 @@ public class BasePage{
 
     public void sendKeysByElement(By locator, String text){
         waitForElement(locator);
+        waitForElementVisible(locator);
+        clickByElement(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
     }
+
 }
