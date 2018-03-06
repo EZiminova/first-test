@@ -13,25 +13,18 @@ public class BasePage{
         this.driver = driver;
     }
 
-    public void waitForElement(By locator){
-        (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
-
-    public void waitForElementVisible(By locator){
+    public void waitForElementClickable(By locator){
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public void clickByElement(By locator){
-        waitForElement(locator);
-        waitForElementVisible(locator);
+        waitForElementClickable(locator);
         driver.findElement(locator).click();
     }
 
     public void sendKeysByElement(By locator, String text){
-        waitForElement(locator);
-        waitForElementVisible(locator);
+        waitForElementClickable(locator);
         clickByElement(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);

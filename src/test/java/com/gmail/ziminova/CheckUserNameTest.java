@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SecondTest extends BaseTest {
+public class CheckUserNameTest extends BaseTest {
     private static SearchPage searchPage;
     private static MailPage mailPage;
 
@@ -25,7 +25,7 @@ public class SecondTest extends BaseTest {
 
         searchPage.enterMail("AutotestUser","AutotestUser123");
 
-        String userNameText = mailPage.getresult();
+        String userNameText = mailPage.getResult();
 
         Assert.assertEquals(userNameText, "AutotestUser");
     }

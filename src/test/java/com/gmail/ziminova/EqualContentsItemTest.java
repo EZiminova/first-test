@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class FirstTest extends BaseTest{
+public class EqualContentsItemTest extends BaseTest{
 
     private static SearchPage searchPage;
     private static LocationPage locationPage;
@@ -20,28 +20,20 @@ public class FirstTest extends BaseTest{
         locationPage = PageFactory.initElements(driver, LocationPage.class);
     }
 
-    /*@Test
-    public void CheckValue() throws InterruptedException {
-        driver.get("https://ya.ru");
-
-        searchPage.search("Прогноз погоды на неделю");
-       Assert.assertEquals("Погода в Пензе", searchPage.getResult());
-
-    }*/
 
     @Test
-    public void equalContents (){
+    public void equalContentsItemMore (){
         driver.get("https://yandex.ru");
 
         searchPage.changeOfLocation();
         locationPage.choiceLocation("Лондон");
-        String textMore1 = searchPage.saveContentsItem();
+        String textMoreBefore = searchPage.saveContentsItem();
 
         searchPage.changeOfLocation();
         locationPage.choiceLocation("Милан");
-        String textMore2 = searchPage.saveContentsItem();
+        String textMoreAfter = searchPage.saveContentsItem();
 
-        Assert.assertEquals(textMore1, textMore2);
+        Assert.assertEquals(textMoreBefore, textMoreAfter);
 
     }
 

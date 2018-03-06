@@ -15,7 +15,6 @@ public class LocationPage extends BasePage {
     }
 
     public void choiceLocation(String text){
-
         sendKeysByElement(locationField, text);
         clickByElement(firstLocationField);
     }

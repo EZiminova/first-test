@@ -13,8 +13,8 @@ public class MailPage extends BasePage {
         this.driver = driver;
     }
 
-    public String getresult(){
-        waitForElement(userNameLabel);
+    public String getResult(){
+        waitForElementClickable(userNameLabel);
         return driver.findElement(userNameLabel).getText();
     }
 

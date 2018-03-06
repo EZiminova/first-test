@@ -21,15 +21,8 @@ public class SearchPage extends BasePage{
         this.driver = driver;
     }
 
-    public void search(String text){
-        sendKeysByElement(entrySearchField, text);
-        clickByElement(searchButton);
-    }
-
     public void enterMail(String login, String password){
-        //clickByElement(loginField);
         sendKeysByElement(loginField, login);
-        //clickByElement(passwordField);
         sendKeysByElement(passwordField, password);
         clickByElement(enterMailButon);
     }
